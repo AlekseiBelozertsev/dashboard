@@ -1,0 +1,207 @@
+.dashboard_header {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $white;
+    padding: .7em;
+    &::after {
+        content: '\f002';
+        display: block;
+        position: absolute;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 700;
+        margin-left: .4em;
+        color: $grey_text; 
+        transform: translateY(88%);
+    }
+}
+
+.dashboard_input {
+    border: none;
+    border-radius: 5px;
+    background-color: $grey_bg;
+    color: $grey_text;
+    padding-left: 1.85em;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 34px;
+/* identical to box height, or 243% */
+}
+
+.header_items_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 15em;
+}
+
+.nots_ellipse,
+.light_ellipse {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $grey_bg;
+    padding: 0;
+    margin: 0;
+}
+
+.fa-sun,
+.fa-bell {
+    font-size: 1.7em;
+    margin-left: .36em;
+    color: $grey_text;
+}
+
+.nots_ellipse::after {
+    content: '\f111';
+     /* display: none; Если нет уведомленй */
+    display: block;
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    font-size: .7em;
+    font-weight: 700;
+    color: $warning;
+    left: 55%;
+    transform: translateY(-25%);
+}
+
+.dashboard_title_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard_main {
+    display: grid;
+    padding: .7em;
+    background-color: $grey_bg
+}
+
+.stats {
+    place-self: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 3.5em;
+}
+
+@media (max-width: 350px) {
+    .dashboard_main {
+        display: grid;
+        padding: .1em;
+        background-color: $grey_bg
+    }
+    .stats {
+        place-self: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: .1em;
+    }
+    .dashboard_input {
+        max-width: 7em;
+    }
+    .stats_item {
+        /* width: 3em;
+        height: 2em; */
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* border: 2px solid $grey_text; */
+        padding: .1em;
+        border-radius: 10px;
+        background-color: $white
+    }
+}
+
+.stats_nums_wrapper {
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+    margin-left: .8em;
+}
+
+.stats_item {
+    /* width: 3em;
+    height: 2em; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid $grey_text; */
+    padding: .6em;
+    border-radius: 10px;
+    background-color: $white
+}
+
+.stats_percent {
+    align-self: center;
+    font-family: Inter;
+    font-style: normal;
+    font-size: .8em;
+    line-height: 28px;
+/* identical to box height */
+    letter-spacing: 0.75px;
+    margin: 0;
+}
+
+/* Меняется в зависимости от падения или повышения числа */
+
+.percent_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $grey_text;
+}
+.increase {
+    padding: .2em;
+    margin: 0;
+    align-self: center;
+    transform: rotate(-35deg);
+    color: green;
+}
+
+.decrease {
+    padding: .2em;
+    margin: 0;
+    align-self: center;
+    transform: rotate(35deg);
+    color: $warning;
+}
+
+
+
+.stats_ellipse {
+    position: relative;
+    align-self: center;
+    background-color: $grey_bg;
+    margin: .3em;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    &:after {
+        /* content: '\f111';
+        display: block;
+        position: absolute;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 700;
+        color: green;
+        left: 60%;
+		transform: translateY(-20%); */
+    }
+}
+
+.stats_total: {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: .9em;
+    line-height: 30px;
+/* identical to box height */
+    letter-spacing: 0.75px;
+}
+
+

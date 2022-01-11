@@ -1,0 +1,120 @@
+.sidebar {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 100%;
+    max-width: 15em;
+    margin: 0;
+    padding: .5em;
+    background-color: $sidebar_color;
+    color: $white;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        height: 100%;
+        max-width: 15em;
+        margin: 0;
+        padding: .5em;
+        background-color: $sidebar_color;
+        color: $white;
+        box-shadow: 5px 0px 5px $grey_text;
+        transition: .15s;
+        z-index: 10;
+    }
+
+    .disabled {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: -200px;
+        float: left;
+        height: 100%;
+        max-width: 15em;
+        margin: 0;
+        padding: .5em;
+        background-color: $sidebar_color;
+        color: $white;
+        box-shadow: 5px 0px 5px $grey_text;
+        transition: .15s;
+        z-index: 10;
+
+    }
+    .sidebar_disabled {
+        position: relative;
+        width: 3em;
+        height: 3em;
+        border-radius: 2em;
+        left: 90%;
+        top: 120%;
+        background-color: $sidebar_color;
+        /* box-shadow: 5px 0px 10px $grey_text; */
+        cursor: pointer;
+        z-index: 20;
+    }
+
+}
+
+    
+.sidebar_header {
+    display: flex;
+    flex-direction: row;
+    color: $white;
+}
+
+.sidebar_comments {
+    position: relative;
+    &:after {
+        content: '\f111';
+        /* display: none; Если нет уведомленй */
+        display: block;
+        position: absolute;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: $warning;
+        left: 125%;
+        transform: translateY(-114.5%);
+    }
+}
+
+
+
+.sidebar_user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: .3em;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: .3em;
+}
+
+.avatar_ellipse {
+    position: relative;
+    align-self: center;
+    background-color: $grey_bg;
+    margin: .3em;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    &:after {
+        content: '\f111';
+        display: block;
+        position: absolute;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 700;
+        color: green;
+        left: 60%;
+		transform: translateY(-20%);
+    }
+}
+

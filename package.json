@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "postcss src/style.css --dir css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.2.0",
+    "postcss-simple-vars": "^6.0.3"
+  }
+}
