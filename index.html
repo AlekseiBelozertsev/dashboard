@@ -13,26 +13,20 @@
 </head>
 <body> 
     <div class="sidebar" id="sidebar">
-        <div class="sidebar_header">
-            <div class="sidebar_disabled" id="sidebarButton"></div>
-            <h3>Crappy Panel</h3>
-        </div>
-            <div class="sidebar_navigation">
-                <ul>
-                    <li><a href="" type="button" class="active"><i class="fas fa-igloo"></i>Home</a> </li>
-                    <li><a href="" type="button" class="inactive"><i class="far fa-sticky-note"></i>Posts</a> </li>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-th-large"></i>Categories</a> </li>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-photo-video"></i>Media</a> </li>
-                    <li><a href="" type="button" class="inactive"><i class="far fa-file"></i>Pages</a> </li>
-                    <li><a href="" type="button" class="sidebar_comments active inactive"><i class="fas fa-comment-alt"></i>Comments</a> </li>
-                </ul>
+        <div class="sidebar_disabled" id="sidebarButton"></div>
+            <div class="list_1st_wrapper">
+                <h3 class="sidebar_head">Crappy Panel</h3>
+                <a href="" type="button" class="active"><i class="fas fa-igloo"></i>Home</a> 
+                <a href="" type="button" class="inactive"><i class="far fa-sticky-note"></i>Posts</a> </li>
+                <a href="" type="button" class="inactive"><i class="fas fa-th-large"></i>Categories</a> 
+                <a href="" type="button" class="inactive"><i class="fas fa-photo-video"></i>Media</a> 
+                <a href="" type="button" class="inactive"><i class="far fa-file"></i>Pages</a> 
+                <a href="" type="button" class="sidebar_comments active inactive"><i class="fas fa-comment-alt"></i>Comments</a>
                 <h3>system</h3>
-                <ul>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-ghost"></i>Appearence</a></li>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-cubes"></i>Extensions</a></li>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-users"></i>Users</a></li>
-                    <li><a href="" type="button" class="inactive"><i class="fas fa-cogs"></i>Settings</a></li>
-                </ul>
+                <a href="" type="button" class="inactive"><i class="fas fa-ghost"></i>Appearence</a>
+                <a href="" type="button" class="inactive"><i class="fas fa-cubes"></i>Extensions</a>
+                <a href="" type="button" class="inactive"><i class="fas fa-users"></i>Users</a>
+                <a href="" type="button" class="inactive"><i class="fas fa-cogs"></i>Settings</a>
             </div>
         <div class="sidebar_user">
             <div class="avatar_ellipse">
@@ -54,7 +48,7 @@
                     <a href=""><option value="EN" selected>EN</option></a>
                     <a href=""><option value="RU">RU</option></a>
                 </select>
-                <a href="#" class="nots_ellipse">
+                <a href="#" class="nots_ellipse active_nots">
                    <i class="fas fa-bell"></i>
                 </a>
                 <a href="#" type="button" class="light_ellipse">
@@ -77,7 +71,7 @@
                     </div>
                     <div class="stats_nums_wrapper">
                         <h3 class="stats_total">100500</h3>
-                        <p class="stats_title">Total number</p>
+                        <span class="stats_title">Total visits</span>
                         <div class="percent_wrapper">
                             <i class="fas fa-long-arrow-alt-right decrease"></i>
                             <span class="stats_percent">0.2</span>
@@ -85,27 +79,29 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="stats_item">
                     <div class="stats_icon_wrapper">
                         <div class="stats_ellipse article"></div>
                     </div>
                     <div class="stats_nums_wrapper">
-                        <h3 class="stats_total">100500</h3>
-                        <p class="stats_title">Total number</p>
+                        <h3 class="stats_total">1267</h3>
+                        <span class="stats_title">Total articles</span>
                         <div class="percent_wrapper">
-                            <i class="fas fa-long-arrow-alt-right increase"></i>
+                            <i class="fas fa-long-arrow-alt-right static"></i>
                             <span class="stats_percent">40.2</span>
                             <span>%</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="stats_item">
                     <div class="stats_icon_wrapper">
                         <div class="stats_ellipse subscription"></div>
                     </div>
                     <div class="stats_nums_wrapper">
-                        <h3 class="stats_total">100500</h3>
-                        <p class="stats_title">Total number</p>
+                        <h3 class="stats_total">980</h3>
+                        <span class="stats_title">Total subscribers</span>
                         <div class="percent_wrapper">
                             <i class="fas fa-long-arrow-alt-right increase"></i>
                             <span class="stats_percent">15.2</span>
@@ -113,13 +109,14 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="stats_item">
                     <div class="stats_icon_wrapper">
                         <div class="stats_ellipse total_autors"></div>
                     </div>
                     <div class="stats_nums_wrapper">
-                        <h3 class="stats_total">100500</h3>
-                        <p class="stats_title">Total number</p>
+                        <h3 class="stats_total">25</h3>
+                        <span class="stats_title">Total authors</span>
                         <div class="percent_wrapper">
                             <i class="fas fa-long-arrow-alt-right decrease"></i>
                             <span class="stats_percent">1.44</span>
@@ -128,8 +125,142 @@
                     </div>
                 </div>
             </div>
+
+            <div class="dashboard_chart_wrapper">
+                <canvas id="dashboardChart"></canvas>
+            </div>
+            <div class="table_wrapper">
+                <table>
+                    <tr class="row_head">
+                        <th class="table_pic">Thumbnail</th>
+                        <th class="table_title">Title</th>
+                        <th class="table_user">Author</th>
+                        <th class="table_user_status">Status</th>
+                        <th class="date_of_change">Date</th>
+                        <th class="table_action">Action</th>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt=""></th>
+                        <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </th>
+                        <th>
+                            <div class="sidebar_user">
+                                <div class="avatar_ellipse">
+                                    <div class="avatar"></div>
+                                </div>
+                                <div class="user_info">
+                                    <p class="user_name">Jane Doe</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="status_ellipse">
+                                <span class=""></span>
+                            </div>
+                        </th>
+                        <th>
+                            <span class="date"></span>
+                        </th>
+                        <th><i class="action_icon">...</i></th>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt=""></th>
+                        <th>Eveniet consectetur asperiores quibusdam minima quas.</th>
+                        <th>
+                            <div class="sidebar_user">
+                                <div class="avatar_ellipse">
+                                    <div class="avatar"></div>
+                                </div>
+                                <div class="user_info">
+                                    <p class="user_name">John Toe</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="status_ellipse">
+                                <span class=""></span>
+                            </div>
+                        </th>
+                        <th>
+                            <span class="date"></span>
+                        </th>
+                        <th><i class="action_icon">...</i></th>
+                    </tr>
+                    <tr>   
+                        <th><img src="" alt=""></th>
+                        <th>Numquam pariatur, totam vitae, cumque magnam dolores ea voluptas.</th>
+                        <th>
+                            <div class="sidebar_user">
+                                <div class="avatar_ellipse">
+                                    <div class="avatar"></div>
+                                </div>
+                                <div class="user_info">
+                                    <p class="user_name">William Shakeit</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="status_ellipse">
+                                <span class=""></span>
+                            </div>
+                        </th>
+                        <th>
+                            <span class="date"></span>
+                        </th>
+                        <th><i class="action_icon">...</i></th>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt=""></th>
+                        <th>Corporis.</th>
+                        <th>
+                            <div class="sidebar_user">
+                                <div class="avatar_ellipse">
+                                    <div class="avatar"></div>
+                                </div>
+                                <div class="user_info">
+                                    <p class="user_name">Buddy Coal</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="status_ellipse">
+                                <span class=""></span>
+                            </div>
+                        </th>
+                        <th>
+                            <span class="date"></span>
+                        </th>
+                        <th><i class="action_icon">...</i></th>
+                    </tr>
+                    <tr>
+                        <th><img src="" alt=""></th>
+                        <th>Asperiores quibusdam minima quas quis adipisci explicabo.</th>
+                        <th>
+                            <div class="sidebar_user">
+                                <div class="avatar_ellipse">
+                                    <div class="avatar"></div>
+                                </div>
+                                <div class="user_info">
+                                    <p class="user_name">Critical Poo</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="status_ellipse">
+                                <span class=""></span>
+                            </div>
+                        </th>
+                        <th>
+                            <span class="date"></span>
+                        </th>
+                        <th><i class="action_icon">...</i></th>
+                    </tr>
+                </table>
+            </div>
+        
         </div>
     </div>
     <script src="./src/javaScript/sidebar.js"></script>
+    <script src="./node_modules/chart.js/dist/chart.js"></script>
+    <script src="./src/javaScript/chart.js"></script>
 </body>
 </html>
